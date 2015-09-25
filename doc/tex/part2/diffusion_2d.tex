@@ -1,0 +1,17 @@
+\section{2-Dimensional Diffusion}
+
+
+The two dimensional diffusion equation is given as:
+\begin{equation}
+  \frac{\partial u}{\partial t} = v\frac{\partial^2 u}{\partial x^2} + v\frac{\partial^2 u}{\partial y^2}  
+\end{equation}
+
+We approximate this using a forward difference in time and a central difference in space:
+\begin{equation}
+  \frac{u^{n+1}_{i, j} - u^{n}_{i, j}}{\Delta t} = v\frac{ u^{n}_{i, j-1} - 2  u^{n}_{i, j} +  u^{n}_{i, j+1}}{\Delta x^2} + v\frac{ u^{n}_{i-1, j} - 2  u^{n}_{i, j} +  u^{n}_{i+1, j}}{\Delta y^2}
+\end{equation}
+
+Rearranging to solve for $u^{n+1}_{i, j}$ yields:
+\begin{equation}
+u^{n+1}_{i, j} = u^{n}_{i, j} + \frac{v\Delta t}{\Delta x^2}(u^{n}_{i, j-1} - 2  u^{n}_{i, j} +  u^{n}_{i, j+1}) + \frac{v\Delta t}{\Delta y^2}(u^{n}_{i-1, j} - 2  u^{n}_{i, j} +  u^{n}_{i+1, j})
+\end{equation}

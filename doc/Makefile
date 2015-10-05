@@ -14,7 +14,6 @@ $(AUTO_DIR)/$(TABLE_DIR)/%.tex: $(TABLE_DIR)/%.csv
 	$(maketargetdir)
 	cat $< > $@
 
-
 define maketargetdir
 	-@mkdir -p $(dir $@) > /dev/null 2>&1
 endef

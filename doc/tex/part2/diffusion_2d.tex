@@ -8,10 +8,10 @@ The two dimensional diffusion equation is given as:
 
 We approximate this using a forward difference in time and a central difference in space:
 \begin{equation}
-  \frac{u^{n+1}_{i, j} - u^{n}_{i, j}}{\Delta t} = v\frac{ u^{n}_{i, j-1} - 2  u^{n}_{i, j} +  u^{n}_{i, j+1}}{\Delta x^2} + v\frac{ u^{n}_{i-1, j} - 2  u^{n}_{i, j} +  u^{n}_{i+1, j}}{\Delta y^2}
+  \frac{u^{n+1}_{i, j} - u^{n}_{i, j}}{\Delta t} = \nu\frac{ u^{n}_{i, j-1} - 2  u^{n}_{i, j} +  u^{n}_{i, j+1}}{\Delta x^2} + \nu\frac{ u^{n}_{i-1, j} - 2  u^{n}_{i, j} +  u^{n}_{i+1, j}}{\Delta y^2}
 \end{equation}
 
 Rearranging to solve for $u^{n+1}_{i, j}$ yields:
 \begin{equation}
-u^{n+1}_{i, j} = u^{n}_{i, j} + \frac{v\Delta t}{\Delta x^2}(u^{n}_{i, j-1} - 2  u^{n}_{i, j} +  u^{n}_{i, j+1}) + \frac{v\Delta t}{\Delta y^2}(u^{n}_{i-1, j} - 2  u^{n}_{i, j} +  u^{n}_{i+1, j})
+u^{n+1}_{i, j} = u^{n}_{i, j} + \frac{\nu\Delta t}{\Delta x^2}(u^{n}_{i, j-1} - 2  u^{n}_{i, j} +  u^{n}_{i, j+1}) + \frac{\nu\Delta t}{\Delta y^2}(u^{n}_{i-1, j} - 2  u^{n}_{i, j} +  u^{n}_{i+1, j})
 \end{equation}
